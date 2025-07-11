@@ -1,0 +1,684 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+.hidden {
+  display: none !important;
+}
+
+
+/* Header */
+header {
+    background-color: #004d40;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #b2dfdb;
+    text-decoration: underline;
+}
+
+/* Section layout */
+.section {
+    display: none;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.section:not(.hidden) {
+    display: block;
+}
+
+/* Authenticator Styling */
+.authenticator-section {
+    max-width: 700px;
+    margin: 60px auto;
+    background: white;
+    border-radius: 10px;
+    padding: 40px 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.authenticator-section h2 {
+    color: #00796b;
+    margin-bottom: 15px;
+}
+
+.authenticator-section form {
+    margin-bottom: 30px;
+}
+
+.authenticator-section input[type="text"] {
+    width: 70%;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.authenticator-section button {
+    padding: 10px 25px;
+    font-size: 16px;
+    margin-left: 10px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.result-box {
+    text-align: left;
+    padding: 25px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.auth-status {
+    margin-top: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: #2e7d32;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.drug-info-box {
+    background-color: #e8f5e9;
+    padding: 25px;
+    margin-top: 30px;
+    border-left: 5px solid #4caf50;
+    text-align: left;
+    border-radius: 8px;
+}
+
+/* Inventory Section */
+.form-container,
+.inventory-section {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1000px;
+    margin: 0 auto 30px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.form-container h2,
+.inventory-section h1 {
+    margin-bottom: 20px;
+}
+
+.form-container input,
+.form-container button,
+.form-container textarea{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.form-container button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.actions button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.actions button.export {
+    background-color: #2196F3;
+}
+
+.actions button.import {
+    background-color: #FF9800;
+}
+
+.search-box {
+    margin: 20px 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.search-box input {
+    padding: 10px;
+    width: 250px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th,
+td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+td.status {
+    font-weight: bold;
+}
+
+.low-stock {
+    color: #e67e22;
+}
+
+.expired {
+    color: #e74c3c;
+}
+
+.actions-btns button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    font-size: 13px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.restock-btn {
+    background-color: #2ecc71;
+    color: white;
+}
+
+/* Footer */
+footer {
+    background-color: #004d40;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.success-msg, .error-msg {
+  color: #fff;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.success-msg {
+  background-color: #4CAF50;
+}
+
+.error-msg {
+  background-color: #f44336;
+}
+
+.form-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
+}
+
+#storeList {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#storeList li {
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#storeList li:hover {
+    background-color: #f0f0f0;
+}
+
+.inventory-section .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inventory-section .header button {
+    background-color: #ccc;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.inventory-section table tr {
+  transition: background-color 0.3s ease;
+}
+
+/* Modal for Trend Chart */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  width: 70%;
+  max-width: 700px;
+  position: relative;
+}
+
+.modal-content canvas {
+  width: 100%;
+  height: auto;
+}
+
+.modal .close {
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.trend-btn {
+  background-color: #00796b;
+  color: white;
+  padding: 6px 10px;
+  margin-top: 5px;
+  font-size: 12px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+
+.registered-drug-dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.drug-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  text-align: left;
+  word-wrap: break-word; /* For older support */
+  overflow-wrap: break-word; /* Standard for long words */
+  white-space: normal;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.drug-card h4 {
+  color: #00796b;
+  margin-bottom: 10px;
+  font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.drug-card p {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* .styled-search-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #00796b;
+  border-radius: 8px;
+  margin: 10px 0 20px;
+  outline: none;
+} */
+
+.styled-search-input {
+  width: 90%;
+  max-width: 600px;
+  padding: 12px 15px;
+  border: 2px solid #00695c;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin: 20px auto;
+  display: block;
+}
+
+.admin-password-entry {
+  margin: 20px 0;
+  display: flex;
+  gap: 10px;
+}
+
+.admin-password-entry input {
+  padding: 8px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+}
+
+.admin-password-entry button {
+  background-color: #00796b;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.register-store {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.register-store h2 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.register-store input {
+  padding: 10px 14px;
+  margin: 6px;
+  border: 1px solid #00695c;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  font-size: 1rem;
+}
+
+.register-store button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #004d40;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.register-store button:hover {
+  background-color: #00796b;
+}
+
+/* Container and section styling */
+.inventory-browser {
+  padding: 2rem;
+  background-color: #f6f9fc;
+  border-radius: 8px;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.inventory-browser h2 {
+  margin-bottom: 1rem;
+  color: #003f3f;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+/* Inventory registration form */
+.inventory-form {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.inventory-form input[type="text"],
+.inventory-form input[type="password"],
+.inventory-form button {
+  padding: 10px 12px;
+  border: 1px solid #004d4d;
+  border-radius: 5px;
+  font-size: 0.95rem;
+}
+
+.inventory-form input[type="text"],
+.inventory-form input[type="password"] {
+  flex: 1;
+  min-width: 180px;
+}
+
+.inventory-form button {
+  background-color: #00695c;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.inventory-form button:hover {
+  background-color: #004d40;
+}
+
+/* Search input */
+.inventory-browser input[type="text"],
+.inventory-browser input[type="password"],
+.inventory-browser button{
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #00695c;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+/* Store list */
+#storeList {
+  list-style: none;
+  padding-left: 0;
+  text-align: center;
+}
+
+#storeList li {
+  background-color: white;
+  margin: 10px auto;
+  padding: 10px 15px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#storeList li:hover {
+  background-color: #e0f2f1;
+}
+
+
+/* New css */
+
+.register-form {
+  text-align: center;
+  margin: 30px auto;
+}
+
+.register-form input {
+  padding: 10px;
+  margin: 6px;
+  border: 1px solid teal;
+  border-radius: 6px;
+  width: 200px;
+}
+
+.register-form button {
+  padding: 10px 16px;
+  background: #005c55;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.inventory-browser input {
+  width: 90%;
+  padding: 12px;
+  margin: 15px auto;
+  display: block;
+  border: 2px solid teal;
+  border-radius: 6px;
+}
+
+.inventory-browser ul li {
+  background: white;
+  padding: 12px;
+  margin: 8px auto;
+  width: 80%;
+  text-align: center;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.password-prompt input {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 6px;
+  border: 1px solid teal;
+}
+
+.password-prompt button {
+  margin: 5px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #00695c;
+  color: white;
+  cursor: pointer;
+}
+
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #323232;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 5px;
+  z-index: 9999;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+}
